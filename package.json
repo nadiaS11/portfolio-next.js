@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@apollo/client": "^3.9.7",
+    "@emailjs/browser": "^4.3.3",
     "@headlessui/react": "^1.7.18",
     "@nextui-org/react": "^2.2.10",
     "@tabler/icons-react": "^2.47.0",

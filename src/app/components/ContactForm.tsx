@@ -3,14 +3,66 @@
 import * as React from "react";
 import { cn } from "@/app/utils/cn";
 import { useMotionTemplate, useMotionValue, motion } from "framer-motion";
+import emailjs from "@emailjs/browser";
 
 export interface InputProps
   extends React.InputHTMLAttributes<HTMLInputElement> {}
 
 export default function ContactForm() {
+  const [email, setEmail] = React.useState("");
+  const [name, setName] = React.useState("");
+  const [message, setMessage] = React.useState("");
+  const [error, setError] = React.useState("");
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("Form submitted");
+    if (!email) return setError("Please enter your email address.");
+    if (!name) return setError("Please enter your name.");
+    if (!message) return setError("Please enter your message.");
+    const templateParams = {
+      to_name: "Nadia Sultana",
+      from_name: email,
+      user_name: name,
+      user_email: email,
+      message,
+    };
+    console.log(templateParams);
+    emailjs
+      .send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID ?? "",
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID ?? "",
+        templateParams,
+        {
+          publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
+        }
+      )
+      .then(
+        (response) => {
+          console.log("SUCCESS!", response.status, response.text);
+          setName("");
+          setEmail("");
+          setMessage("");
+          setError("");
+        },
+        (err) => {
+          console.log("FAILED...", err);
+          setError(err);
+        }
+      );
+  };
+
+  // Input handlers
+  const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setName(e.target.value);
+  };
+
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target.value);
+  };
+
+  const handleMessageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setMessage(e.target.value);
   };
   return (
     <div className="dark:bg-[#1C1C1C] min-w-min rounded-2xl p-4 border border-neutral-800 mt-3 dark:text-neutral-400">
@@ -27,7 +79,13 @@ export default function ContactForm() {
             >
               Your name
             </label>
-            <Input id="name" placeholder="Your Name" type="text" />
+            <Input
+              value={name}
+              onChange={handleNameChange}
+              id="name"
+              placeholder="Your Name"
+              type="text"
+            />
           </LabelInputContainer>
 
           <LabelInputContainer className="mb-4">
@@ -37,7 +95,13 @@ export default function ContactForm() {
             >
               Email Address
             </label>
-            <Input id="email" placeholder="projectmayhem@fc.com" type="email" />
+            <Input
+              value={email}
+              onChange={handleEmailChange}
+              id="email"
+              placeholder="example@example.com"
+              type="email"
+            />
           </LabelInputContainer>
           <LabelInputContainer className="mb-4">
             <label
@@ -47,6 +111,8 @@ export default function ContactForm() {
               Message
             </label>
             <Input
+              value={message}
+              onChange={handleMessageChange}
               id="message"
               placeholder="Hi there!"
               type="text"

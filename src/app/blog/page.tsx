@@ -18,7 +18,6 @@ async function getData() {
     "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@nadia-sultana"
   );
   const data = await res.json();
-  console.log("Raw data from API:", data.items);
   return data;
 }
 

@@ -40,7 +40,7 @@ export default function Homepage({ data }: { data: Article[] }) {
               stiffness: 200,
             },
           }}
-          className="max-w-xl mx-auto antialiased pt-4 relative"
+          className="max-w-full    xl:max-w-xl mx-auto antialiased pt-4 relative"
         >
           <RightSidebar data={data as Article[]} />
         </motion.div>
