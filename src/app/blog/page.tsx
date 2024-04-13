@@ -1,4 +1,3 @@
-import { title } from "process";
 import Blogs from "../components/Blogs";
 
 export interface Article {
@@ -20,11 +19,8 @@ async function getData() {
   );
   // The return value is *not* serialized
   // You can return Date, Map, Set, etc.
+  console.log("from blog page getdata");
 
-  if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
-    throw new Error("Failed to fetch data");
-  }
   return res.json();
 }
 

@@ -9,8 +9,6 @@ import Link from "next/link";
 import ContactForm from "./ContactForm";
 
 function RightSidebar({ data }: { data: Article[] }) {
-  console.log(data);
-
   return (
     <motion.div
       initial={{ y: 10, opacity: 0 }}

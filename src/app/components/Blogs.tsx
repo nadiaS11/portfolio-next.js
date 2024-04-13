@@ -16,7 +16,6 @@ export default function Blogs({ data }: { data: Article[] }) {
   //   return imgElement ? imgElement.src : null;
   // }
 
-  console.log(data);
   return (
     <motion.div
       initial={{ y: 50, opacity: 0 }}
