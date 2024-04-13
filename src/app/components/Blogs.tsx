@@ -84,7 +84,7 @@ export default function Blogs({ data }: { data: Article[] }) {
                           July 22, 2023 - {article.author}
                         </p>
                         <p className="inline-flex items-center gap-2">
-                          {article.category.map((item, idx) => (
+                          {article.categories.map((item, idx) => (
                             <button className="text-xs  px-1" key={idx}>
                               #{item}
                             </button>

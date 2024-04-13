@@ -6,7 +6,7 @@ export interface Article {
   author: string;
   published: number;
   created: number;
-  category: string[];
+  categories: string[];
   content: string;
   enclosures: any[];
   content_encoded: string;
@@ -15,16 +15,16 @@ export interface Article {
 
 async function getData() {
   const res = await fetch(
-    "https://v1.nocodeapi.com/nadiasultana/medium/kFWlrJJqeXGwhsXy"
+    "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@nadia-sultana"
   );
   const data = await res.json();
-  console.log("Raw data from API:", data);
+  console.log("Raw data from API:", data.items);
   return data;
 }
 
 async function BlogPage() {
   const data = await getData();
-  return <Blogs data={data as Article[]} />;
+  return <Blogs data={data.items as Article[]} />;
 }
 
 export default BlogPage;
