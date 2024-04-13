@@ -8,6 +8,7 @@ const nextConfig = {
       "cdn-images-1.medium.com",
       "images.unsplash.com",
       "res.cloudinary.com",
+      "miro.medium.com",
     ],
   },
 };

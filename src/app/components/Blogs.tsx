@@ -8,13 +8,13 @@ import { Article } from "../blog/page";
 import { button } from "@nextui-org/react";
 
 export default function Blogs({ data }: { data: Article[] }) {
-  function extractImageSrc(html: string) {
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(html, "text/html");
-    const imgElement = doc.querySelector("img");
-    console.log(imgElement);
-    return imgElement ? imgElement.src : null;
-  }
+  // function extractImageSrc(html: string) {
+  //   const parser = new DOMParser();
+  //   const doc = parser.parseFromString(html, "text/html");
+  //   const imgElement = doc.querySelector("img");
+  //   console.log(imgElement);
+  //   return imgElement ? imgElement.src : null;
+  // }
 
   console.log(data);
   return (
@@ -54,14 +54,14 @@ export default function Blogs({ data }: { data: Article[] }) {
 
           <div className="  bg-[#1C1C1C] rounded-lg dark:text-neutral-400">
             {data.map((article) => {
-              const imageSrc = extractImageSrc(article.content);
-              console.log(imageSrc);
+              // const imageSrc = extractImageSrc(article.content);
+              // console.log(imageSrc);
 
               return (
                 <Link key={article.published} href={"/dashboard/djdj"}>
                   <div className="hover:bg-neutral-800 duration-200 transition-all ease-in p-4">
                     <div className="  flex items-center gap-x-3">
-                      {imageSrc && (
+                      {/* {imageSrc && (
                         <Image
                           width={1000}
                           height={1000}
@@ -69,7 +69,14 @@ export default function Blogs({ data }: { data: Article[] }) {
                           src={imageSrc as string}
                           alt=""
                         />
-                      )}
+                      )} */}
+                      <Image
+                        width={1000}
+                        height={1000}
+                        className="w-40 h-40 object-cover rounded-md"
+                        src="https://miro.medium.com/v2/4*EBuOxSGT7JZTGq0n4W8A5w.png"
+                        alt=""
+                      />
                       <div>
                         <h2 className="text-lg mb-5 font-RubikMedium">
                           {article.title}
