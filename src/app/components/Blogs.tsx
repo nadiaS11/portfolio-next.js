@@ -52,12 +52,12 @@ export default function Blogs({ data }: { data: Article[] }) {
           <div className="border border-neutral-700 my-5" />
 
           <div className="  bg-[#1C1C1C] rounded-lg dark:text-neutral-400">
-            {data.map((article) => {
+            {data?.map((article) => {
               // const imageSrc = extractImageSrc(article.content);
               // console.log(imageSrc);
 
               return (
-                <Link key={article.published} href={"/dashboard/djdj"}>
+                <Link key={article.published} href={article.link}>
                   <div className="hover:bg-neutral-800 duration-200 transition-all ease-in p-4">
                     <div className="  flex items-center gap-x-3">
                       {/* {imageSrc && (

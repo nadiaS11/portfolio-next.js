@@ -36,7 +36,7 @@ export default function Socials() {
     springConfig
   );
 
-  const people = [
+  const mySocials = [
     {
       id: 1,
       name: "Github",
@@ -75,16 +75,16 @@ export default function Socials() {
     cursor-pointer
     "
     >
-      {people.map((testimonial, idx) => (
+      {mySocials?.map((item, idx) => (
         <Link
-          href={testimonial.position}
+          href={item.position}
           className="-mr-4  relative group"
-          key={testimonial.name}
-          onMouseEnter={() => setHoveredIndex(testimonial.id)}
+          key={item.name}
+          onMouseEnter={() => setHoveredIndex(item.id)}
           onMouseLeave={() => setHoveredIndex(null)}
         >
           <AnimatePresence mode="wait">
-            {hoveredIndex === testimonial.id && (
+            {hoveredIndex === item.id && (
               <motion.div
                 initial={{ opacity: 0, y: 20, scale: 0.6 }}
                 animate={{
@@ -108,13 +108,13 @@ export default function Socials() {
                 <div className="absolute inset-x-10 z-30 w-[20%] -bottom-px bg-gradient-to-r from-transparent via-emerald-500 to-transparent h-px " />
                 <div className="absolute left-10 w-[40%] z-30 -bottom-px bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px " />
                 <div className="font-bold text-white relative z-30 text-base">
-                  {testimonial.name}
+                  {item.name}
                 </div>
-                <div className="text-white text-xs">{testimonial.position}</div>
+                <div className="text-white text-xs">{item.position}</div>
               </motion.div>
             )}
           </AnimatePresence>
-          <p>{testimonial.image}</p>
+          <p>{item.image}</p>
         </Link>
       ))}
     </div>

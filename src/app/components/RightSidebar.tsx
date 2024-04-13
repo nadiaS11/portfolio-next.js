@@ -33,7 +33,7 @@ function RightSidebar({ data }: { data: Article[] }) {
               </h2>
               <div className="border border-neutral-700 my-5 " />
 
-              {data?.slice(0, 3).map((item, idx) => (
+              {data?.slice(0, 3)?.map((item, idx) => (
                 <Link
                   href={item.link}
                   key={idx}

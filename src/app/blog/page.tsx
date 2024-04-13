@@ -8,23 +8,23 @@ export interface Article {
   created: number;
   category: string[];
   content: string;
-  enclosures: any[]; // You might want to define a specific type for enclosures if needed
+  enclosures: any[];
   content_encoded: string;
-  media: any; // You might want to define a specific type for media if needed
+  media: any;
 }
 
 async function getData() {
   const res = await fetch(
     "https://v1.nocodeapi.com/nadiasultana/medium/kFWlrJJqeXGwhsXy"
   );
-  // The return value is *not* serialized
-  // You can return Date, Map, Set, etc.
-  console.log("from blog page getdata");
-
-  return res.json();
+  const data = await res.json();
+  console.log("Raw data from API:", data);
+  return data;
 }
 
-export default async function BlogPage() {
+async function BlogPage() {
   const data = await getData();
   return <Blogs data={data as Article[]} />;
 }
+
+export default BlogPage;
