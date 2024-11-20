@@ -45,7 +45,7 @@ export default function Homepage({ data }: { data: Article[] }) {
           <RightSidebar data={data as Article[]} />
         </motion.div>
       </div>
-      <footer className="max-w-[60rem] px-4 py-1">
+      <footer className="max-w-[55rem] py-1">
         <div className="mt-6 border-t-2 border-[#404040]  dark:bg-[#1C1C1C] dark:rounded-lg dark:text-neutral-400 dark:hover:bg-neutral-800">
           <div className=" duration-200 transition-all ease-in p-4">
             <div className="  flex items-center gap-x-3">
