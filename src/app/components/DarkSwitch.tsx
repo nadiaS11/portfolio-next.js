@@ -46,6 +46,9 @@ const ThemeSwitch = (props: any) => {
   useEffect(() => {
     setMounted(true);
   }, []);
+  useEffect(() => {
+    setTheme("dark");
+  }, []);
 
   if (!mounted) return null;
   return (

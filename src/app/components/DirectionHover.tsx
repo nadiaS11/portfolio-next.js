@@ -93,7 +93,7 @@ export const DirectionAwareHover = ({
                 imageClassName
               )}
               width="1000"
-              height="1000"
+              height={"1000"}
               src={imageUrl}
             />
           </motion.div>

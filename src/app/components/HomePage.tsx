@@ -9,7 +9,7 @@ import MiniProjectsWithHoverEffect from "./MiniProjects";
 export default function Homepage({ data }: { data: Article[] }) {
   return (
     <>
-      <div className="flex flex-col gap-4 xl:flex-row">
+      <div className="flex flex-col gap-6 xl:flex-row">
         <motion.div
           initial={{ y: 10, opacity: 0 }}
           animate={{
@@ -45,9 +45,9 @@ export default function Homepage({ data }: { data: Article[] }) {
           <RightSidebar data={data as Article[]} />
         </motion.div>
       </div>
-      <footer className="max-w-[60rem]  px-4 py-1">
-        <div className="mt-6 border-t  dark:bg-[#1C1C1C] dark:rounded-lg dark:text-neutral-400">
-          <div className="dark:hover:bg-neutral-800 duration-200 transition-all ease-in p-4">
+      <footer className="max-w-[60rem] px-4 py-1">
+        <div className="mt-6 border-t-2 border-[#404040]  dark:bg-[#1C1C1C] dark:rounded-lg dark:text-neutral-400 dark:hover:bg-neutral-800">
+          <div className=" duration-200 transition-all ease-in p-4">
             <div className="  flex items-center gap-x-3">
               <div>
                 <div className="flex items-center gap-x-2 text-[11px]  font-bold">

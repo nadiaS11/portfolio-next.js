@@ -22,9 +22,9 @@ function RightSidebar({ data }: { data: Article[] }) {
           stiffness: 200,
         },
       }}
-      className="  block rounded-2xl  w-full xl:w-80  h-fit md:sticky top-5"
+      className="block rounded-2xl w-full xl:w-80 h-fit md:sticky top-5"
     >
-      <div className="   w-full  ">
+      <div className="w-full">
         <div>
           <div className="dark:bg-[#1C1C1C] min-w-min rounded-2xl p-4 border border-neutral-800 h-fit">
             <div className="dark:text-neutral-400 mb-10">

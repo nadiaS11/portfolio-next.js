@@ -30,8 +30,8 @@ export default function RootLayout({
       <body className={inter.className}>
         {" "}
         <Providers>
-          <div className="max-w-[110rem] mx-auto ">
-            <div className=" gap-4 flex md:mt-5   flex-col md:flex-row  ">
+          <div className="max-w-[110rem] mx-auto px-14">
+            <div className="gap-4 flex md:mt-5 flex-col md:flex-row">
               <LeftSidebar />
 
               <div className="flex-grow max-w-[90rem]">{children}</div>

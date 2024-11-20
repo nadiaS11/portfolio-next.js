@@ -33,11 +33,11 @@ export default function LeftSidebar() {
           opacity: 1,
           transition: { duration: 0.3, type: "spring", stiffness: 200 },
         }}
-        className="  block   w-full md:w-96  h-fit md:sticky top-5 "
+        className="block w-full md:w-96 h-fit md:sticky top-5"
       >
-        <div className=" md:w-96 w-full p-3 border border-neutral-800   rounded-2xl h-full   dark:bg-[#1C1C1C]  ">
+        <div className="md:w-[350px] w-full p-3 border border-neutral-800   rounded-2xl h-full dark:bg-[#1C1C1C]">
           <div className="flex">
-            <div className="w-full   relative">
+            <div className="w-full relative">
               <Image
                 width={1000}
                 height={1000}
@@ -77,71 +77,68 @@ export default function LeftSidebar() {
               </p>
             </div>
 
-            <div className="   ">
+            <div>
               <DarkModeSwitch />
             </div>
           </div>
-          {/* 
-          <form
-            onSubmit={handleSubmit}
-            className="bg-[#282828] p-1  rounded-md md:flex items-center  justify-between h-9 w-full hidden "
-          >
-            <input
-              value={email}
-              onChange={handleChange}
-              className=" w-36 focus:outline-none bg-transparent dark:text-neutral-400 text-xs placeholder:dark:text-neutral-600 h-full pl-2 placeholder:text-xs placeholder:font-RubikMedium"
-              placeholder="name@email.com"
-              type="text"
-            />
-            <motion.button
-              animate={controls}
-              className="bg-[#696969] h-full p-1 rounded-md text-xs w-20 font-RubikMedium dark:text-neutral-50"
-            >
-              Subscribe
-            </motion.button>
-          </form> */}
 
-          <div className="w-full mt-5 dark:text-neutral-300">
-            <h2 className="font-RubikBold my-4">Bio</h2>
-            <p className="text-[14px]  font-RubikRegular my-2">
+          <div className="w-full mt-4 dark:text-neutral-300">
+            <h2 className="font-RubikBold my-2">Bio</h2>
+            <p className="text-[14px] font-RubikRegular">
               I am a frontend developer skilled in MERN Stack, <br /> handling
               both frontend and backend for responsive websites and
               user-friendly interfaces.
             </p>
 
-            <div className="  w-full mt-5  ">
-              <h2 className="font-RubikBold  my-4">Tech Stack</h2>
+            <div className="w-full mt-4">
+              <h2 className="font-RubikBold  my-2">Tech Stack</h2>
 
               <div className="flex gap-2 flex-wrap text-xs my-2">
                 <BrutalBtn> Next.js</BrutalBtn>
+                <BrutalBtn> Graphql</BrutalBtn>
+                <BrutalBtn> Strapi CMS</BrutalBtn>
                 <BrutalBtn> Node.js</BrutalBtn>
                 <BrutalBtn> Express.js</BrutalBtn>
                 <BrutalBtn> Typescript</BrutalBtn>
-                <BrutalBtn> Javascript</BrutalBtn>
                 <BrutalBtn> Postgresql</BrutalBtn>
                 <BrutalBtn> Mongo Db</BrutalBtn>
               </div>
             </div>
-            <div className="border border-[#282828] dark:text-neutral-300 my-6" />
 
-            <div className="mt-6 flex justify-between text-sm">
+            <div className="flex justify-between text-sm border-t border-b border-[#282828] py-3 mt-4">
               <div className="flex items-center gap-x-1">
-                {/* <PiShapesThin /> */}
                 <span className="text-xs font-RubikRegular">
                   1 Year as a Developer
                 </span>
               </div>
               <div className="flex items-center gap-x-1">
-                {/* <PiMagicWandThin /> */}
-                <span className="text-xs font-RubikRegular">16 Projects</span>
+                <span className="text-xs font-RubikRegular">20 Projects</span>
               </div>
             </div>
 
-            <div className="border border-[#282828] dark:text-neutral-300 my-6" />
-
             <div className="my-4 ">
               <h2 className="font-RubikRegular">Work History</h2>
-              <div className="mt-7 flex  justify-between">
+              <div className="mt-4 flex  justify-between">
+                <div className="flex gap-x-3">
+                  <IconDeviceLaptop className="text-xl" />
+                  <div className="-mt-1">
+                    <h3 className="text-sm font-RubikMedium">
+                      Frontend Developer
+                    </h3>
+                    <Link
+                      target="_blank"
+                      href={"https://www.evatix.com/"}
+                      className="text-[12px]"
+                    >
+                      Evatix
+                    </Link>{" "}
+                  </div>
+                </div>
+                <small className="text-[9px] dark:text-neutral-300">
+                  May 2024 - Current
+                </small>
+              </div>
+              <div className="mt-4 flex  justify-between">
                 <div className="flex gap-x-3">
                   <IconDeviceLaptop className="text-xl" />
                   <div className="-mt-1">
@@ -158,26 +155,12 @@ export default function LeftSidebar() {
                   </div>
                 </div>
                 <small className="text-[9px] dark:text-neutral-300">
-                  February 2024 - Current
+                  February 2024 - May 2024
                 </small>
               </div>
-              {/* <div className="my-3 flex  justify-between">
-                <div className="flex gap-x-3">
-                  <SiAdobe className="text-xl" /> 
-                  <div className="-mt-1">
-                    <h3 className="text-sm font-RubikMedium">
-                      Jr. Creative Dev
-                    </h3>
-                    <p className="text-[9px]">Adobe</p>
-                  </div>
-                </div>
-                <small className="text-[9px] dark:text-neutral-300">
-                  Sep 2016 - January 2020
-                </small>
-              </div> */}
             </div>
           </div>
-          <div className="border border-neutral-700 my-5" />
+          <div className="border border-neutral-700 my-2" />
 
           <div className="flex items-center justify-center gap-x-2">
             <Socials />
