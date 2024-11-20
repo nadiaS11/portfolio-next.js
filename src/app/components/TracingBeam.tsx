@@ -70,7 +70,7 @@ export default function TracingBeamDemo() {
       <div className="max-w-3xl mx-auto antialiased pt-4 relative">
         {" "}
         {dummyContent.map((item, index) => (
-          <div key={`content-${index}`} className="mb-20 p-3  ">
+          <div key={`content-${index}`} className="mb-10 p-3">
             <h2 className="bg-black leading-5 tracking-wider text-white rounded-full text-sm w-fit px-4 py-1 mb-4 dark:bg-[#1C1C1C] ">
               {item.badge}
             </h2>

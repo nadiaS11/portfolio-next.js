@@ -66,7 +66,7 @@ export const DirectionAwareHover = ({
       onMouseEnter={handleMouseEnter}
       ref={ref}
       className={cn(
-        "w-full h-full my-10 bg-transparent rounded-lg overflow-hidden group/card relative",
+        "w-full h-full my-5 bg-transparent rounded-lg overflow-hidden group/card relative",
         className
       )}
     >
