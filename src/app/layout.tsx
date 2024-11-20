@@ -30,7 +30,7 @@ export default function RootLayout({
       <body className={inter.className}>
         {" "}
         <Providers>
-          <div className="max-w-[110rem] mx-auto px-14">
+          <div className="max-w-[110rem] mx-auto px-5 sm:px-10 md:px-14 pt-2 md:pt-0">
             <div className="gap-4 flex md:mt-5 flex-col md:flex-row">
               <LeftSidebar />
 
